@@ -1,0 +1,74 @@
+[
+  {
+    "_id": 1,
+    "image": "https://i.ibb.co/zZ3qTbB/Rectangle-2-2.png",
+    "course_name": "Introduction to C Programming",
+    "credit_time": 1,
+    "price": 15000,
+    "details": "Learn the fundamentals of C programming, including variables, loops, and functions."
+  },
+  {
+    "_id": 2,
+    "image": "https://i.ibb.co/XpYNhMH/Rectangle-2-3.png",
+    "course_name": "Introduction to Algorithms",
+    "credit_time": 2,
+    "price": 25000,
+    "details": "An algorithm is a set of instructions designed to solve a problem or perform a specific task."
+  },
+  {
+    "_id": 3,
+    "image": "https://i.ibb.co/N7tJZWQ/Rectangle-2-4.png",
+    "course_name": "Introduction to C++ for DSA",
+    "credit_time": 10,
+    "price": 10000,
+    "details": "C++ is a powerful programming language that is commonly used in the field of Data Structures and Algorithms (DSA).."
+  },
+  {
+    "_id": 4,
+    "image": "https://i.ibb.co/qsmRSR6/Rectangle-3.png",
+    "course_name": "Basic Data Structures",
+    "credit_time": 5,
+    "price": 35000,
+    "details": "Basic data structures are fundamental building blocks in computer science and programming."
+  },
+  {
+    "_id": 5,
+    "image": "https://i.ibb.co/tB77bGg/Rectangle-2.png",
+    "course_name": "Introduction to OOP Python",
+    "credit_time": 5,
+    "price": 19000,
+    "details": "In Python, object-oriented Programming (OOPs) is a programming paradigm that uses objects and classes in programming. "
+  },
+  {
+    "_id": 6,
+    "image": "https://i.ibb.co/C6dcRrx/Rectangle-2-5.png",
+    "course_name": "Software Engineering",
+    "credit_time": 2,
+    "price": 23000,
+    "details": "Software engineering is the systematic approach to the development, operation, and maintenance of software systems"
+  },
+  {
+    "_id": 7,
+    "image": "https://i.ibb.co/HT85B3L/Rectangle-3-1.png",
+    "course_name": "AWS, Cloud Computing",
+    "credit_time": 5,
+    "price": 35000,
+    "details": "Amazon Web Services (AWS) is a leading cloud computing platform offered by Amazon a wide range of on-demand computing resources and services over the internet."
+  },
+  {
+    "_id": 8,
+    "image": "https://i.ibb.co/dLLVtcW/Rectangle-2-1.png",
+    "course_name": "Database (MySQL)",
+    "credit_time": 5,
+    "price": 19000,
+    "details": "MySQL is a popular open-source relational database management system that is widely used for web application"
+  },
+  {
+    "_id": 9,
+    "image": "https://i.ibb.co/BZ17ZWm/Rectangle-2-6.png",
+    "course_name": "Problem-Solving Part",
+    "credit_time": 2,
+    "price": 23000,
+    "details": "The Problem-Solving Part is a process of finding solutions to a particular problem or challenge"
+  }
+]

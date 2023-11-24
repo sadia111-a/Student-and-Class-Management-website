@@ -1,17 +1,14 @@
 import img1 from "../../assets/amazon.png";
 import img2 from "../../assets/spotify.png";
 import img3 from "../../assets/telerama.png";
+import SectionTitle from "../../components/SectionTitle/SectionTitle";
 const Partners = () => {
   return (
     <div>
-      <div className="">
-        <h2 className="text-center font-bold text-3xl lg:text-5xl mt-6 mb-3">
-          Our Partners
-        </h2>
-        <p className="text-center text-lg lg:text-2xl mb-6">
-          We are proud to be sponsored by our Partners
-        </p>
-      </div>
+      <SectionTitle
+        heading={"Our Partners"}
+        subHeading={"Collaborators Behind Our Success"}
+      ></SectionTitle>
       <div className="grid grid-cols-1 lg:grid-cols-3 mt-6 justify-around items-center">
         <div className="mb-8 mx-4 h-[210px]">
           <img
