@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import imgLogo from "../assets/Screenshot 2023-11-23 222833.png";
 
 const Navbar = () => {
   const navOptions = (
@@ -22,7 +21,7 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-black font-medium">
+      <div className="navbar fixed z-10 bg-opacity-90 max-w-screen-xl bg-yellow-100 text-black font-medium">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
