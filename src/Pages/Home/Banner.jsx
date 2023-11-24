@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <div
-      className="hero min-h-screen"
+      className="hero min-h-screen bg-fixed"
       style={{
         backgroundImage:
           "url(https://i.ibb.co/rbNV8Gx/pexels-julia-m-cameron-4145190.jpg)",
@@ -9,8 +9,8 @@ const Banner = () => {
     >
       <div className="hero-overlay bg-opacity-50"></div>
       <div className="hero-content text-center font-serif text-neutral-content">
-        <div className="max-w-2xl">
-          <h1 className="mb-3 text-3xl lg:text-5xl text-white font-bold">
+        <div className="w-3/4 bg-opacity-50 bg-black rounded-md">
+          <h1 className="mb-3 mt-3 text-3xl lg:text-5xl text-white font-bold">
             Welcome to SkillForge
           </h1>
           <p className="mb-3 text-xl text-orange-200 font-bold">

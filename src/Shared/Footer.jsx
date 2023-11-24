@@ -77,7 +77,9 @@ const Footer = () => {
       </div>
       <div className=" footer-center p-4 bg-yellow-50 text-base-content">
         <aside>
-          <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+          <p>
+            Copyright © 2023 - All right reserved by <b>SkillForge</b> Academy
+          </p>
         </aside>
       </div>
     </footer>

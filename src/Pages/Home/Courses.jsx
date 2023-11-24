@@ -23,8 +23,10 @@ const Courses = () => {
         {courses?.map((course) => (
           <SwiperSlide key={course._id}>
             <div className="flex flex-col items-center mx-24 my-16">
-              <img src={course.image} alt="" />
-              <p>{}</p>
+              <img className="w-3/5 h-3/5" src={course.image} alt="" />
+              <p className="font-semibold text-lg mt-3">
+                Course Name : {course.title}
+              </p>
             </div>
           </SwiperSlide>
         ))}

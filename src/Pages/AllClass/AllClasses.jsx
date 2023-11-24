@@ -1,13 +1,24 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import CourseCard from "./CourseCard";
 
 const AllClasses = () => {
+  const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    fetch("course.json")
+      .then((res) => res.json())
+      .then((data) => setCourses(data));
+  }, []);
   return (
     <div>
       <Helmet>
         <title>SkillForge | All Classes</title>
       </Helmet>
-      <h2 className="text-2xl">This is all class</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-9">
+        {courses?.map((course) => (
+          <CourseCard key={course.id} course={course}></CourseCard>
+        ))}
+      </div>
     </div>
   );
 };
