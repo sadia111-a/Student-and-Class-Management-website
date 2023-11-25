@@ -23,20 +23,22 @@ const Navbar = () => {
           <span className="font-serif font-bold">Teach On SkillForge</span>
         </Link>
       </li>
-      {user ? (
-        <>
-          <span>{user?.displayName}</span>
-          <button onClick={handleLogOut} className="btn btn-ghost">
-            LogOut
-          </button>
-        </>
-      ) : (
-        <>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </>
-      )}
+      <li className="font-sans font-bold">
+        {user ? (
+          <>
+            {/* <span>{user?.displayName}</span> */}
+            <button onClick={handleLogOut} className="btn btn-ghost">
+              LogOut
+            </button>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          </>
+        )}
+      </li>
     </>
   );
   return (

@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer p-10 bg-neutral border-2 text-neutral-content">
-        <aside className="w-1/2 text-xl ml-12">
+        <aside className="w-1/2 lg:text-xl ml-12">
           CONTACT US
           <p className="">
             123 ABS Street, Uni 21, Bangladesh
@@ -11,9 +11,9 @@ const Footer = () => {
             10:00 - 23:00
           </p>
         </aside>
-        <nav className="w-1/2">
-          <header className="footer-title text-2xl">Follow US</header>
-          <p className="mb-3 text-xl">Join us on social media</p>
+        <nav className="w-1/2 ml-12">
+          <header className="footer-title lg:text-2xl">Follow US</header>
+          <p className="mb-3 lg:text-xl">Join us on social media</p>
           <div className="grid grid-flow-col gap-4">
             <a>
               <svg
