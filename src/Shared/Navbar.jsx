@@ -5,11 +5,11 @@ import { AuthContext } from "../Provider/AuthProvider";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
-  // const handleLogOut = () => {
-  //   logOut()
-  //     .then(() => {})
-  //     .catch((error) => console.log(error));
-  // };
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   const navOptions = (
     <>
       <li className="font-serif font-bold">
@@ -23,9 +23,20 @@ const Navbar = () => {
           <span className="font-serif font-bold">Teach On SkillForge</span>
         </Link>
       </li>
-      <li className="font-serif font-bold">
-        <Link to="/login">Login</Link>
-      </li>
+      {user ? (
+        <>
+          <span>{user?.displayName}</span>
+          <button onClick={handleLogOut} className="btn btn-ghost">
+            LogOut
+          </button>
+        </>
+      ) : (
+        <>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        </>
+      )}
     </>
   );
   return (

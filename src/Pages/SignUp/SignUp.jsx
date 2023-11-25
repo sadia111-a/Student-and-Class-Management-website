@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../Login/SocialLogin";
 
 const SignUp = () => {
   const {
@@ -27,7 +28,7 @@ const SignUp = () => {
           console.log("user profile info updated");
           reset();
           Swal.fire({
-            position: "top-end",
+            position: "top-center",
             icon: "success",
             title: "User created successfully.",
             showConfirmButton: false,
@@ -144,10 +145,7 @@ const SignUp = () => {
             </p>
             <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
           </div>
-          <div className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer">
-            <FcGoogle size={32} />
-            <p>Continue with Google</p>
-          </div>
+          <SocialLogin></SocialLogin>
           <p className="px-6 text-sm flex gap-2 justify-center mb-5 text-center text-gray-400">
             Already have an account?
             <Link

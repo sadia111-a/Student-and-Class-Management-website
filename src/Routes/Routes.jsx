@@ -6,6 +6,8 @@ import Teach from "../Pages/Teach/Teach";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import SingleCourse from "../Pages/AllClass/SingleCourse/SingleCourse";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +34,15 @@ export const router = createBrowserRouter([
       {
         path: "signUp",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "singleCourse/:_id",
+        element: (
+          <PrivateRoute>
+            <SingleCourse></SingleCourse>
+          </PrivateRoute>
+        ),
+        loader: () => fetch(`http://localhost:5000/course`),
       },
     ],
   },

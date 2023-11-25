@@ -4,6 +4,7 @@
     "image": "https://i.ibb.co/RcMSxCn/wordpress-feature-image-c-programming.png",
     "title": "Introduction to C Programming",
     "enrolment": 1,
+    "rating": 3,
     "price": 1500,
     "description": "Learn the fundamentals of C programming, including variables, loops, and functions."
   },
@@ -12,6 +13,7 @@
     "image": "https://i.ibb.co/bXKyG7r/Introduction-To-Algorithm.jpg",
     "title": "Introduction to Algorithms",
     "enrolment": 2,
+    "rating": 2,
     "price": 2500,
     "description": "An algorithm is a set of instructions designed to solve a problem or perform a specific task."
   },
@@ -20,6 +22,7 @@
     "image": "https://i.ibb.co/6ydvNqB/maxresdefault-1.jpg",
     "title": "Introduction to C++ for DSA",
     "enrolment": 10,
+    "rating": 5,
     "price": 1000,
     "description": "C++ is a powerful programming language that is commonly used in the field of Data Structures and Algorithms (DSA).."
   },
@@ -28,6 +31,7 @@
     "image": "https://i.ibb.co/cLNVVQD/debab6838897d45c790fbb5da719c895483e5049.png",
     "title": "Basic Data Structures",
     "enrolment": 5,
+    "rating": 5,
     "price": 3500,
     "description": "Basic data structures are fundamental building blocks in computer science and programming."
   },
@@ -36,6 +40,7 @@
     "image": "https://i.ibb.co/Yfrsgst/0-79n7-BCq4-Ygyo-Jp8-R.png",
     "title": "Introduction to OOP Python",
     "enrolment": 5,
+    "rating": 3.5,
     "price": 1900,
     "description": "In Python, object-oriented Programming (OOPs) is a programming paradigm that uses objects and classes in programming. "
   },
@@ -44,6 +49,7 @@
     "image": "https://i.ibb.co/kDkg0cD/how-to-become-a-software-engineer.png",
     "title": "Software Engineering",
     "enrolment": 2,
+    "rating": 4,
     "price": 2300,
     "description": "Software engineering is the systematic approach to the development, operation, and maintenance of software systems"
   },
@@ -52,6 +58,7 @@
     "image": "https://i.ibb.co/SvwzS8c/Group-169-3.webp",
     "title": "AWS, Cloud Computing",
     "enrolment": 5,
+    "rating": 4,
     "price": 3500,
     "description": "Amazon Web Services (AWS) is a leading cloud computing platform offered by Amazon a wide range of on-demand computing resources and services over the internet."
   },
@@ -60,6 +67,7 @@
     "image": "https://i.ibb.co/gdKWYRN/maxresdefault-2.jpg",
     "title": "Database (MySQL)",
     "enrolment": 5,
+    "rating": 4,
     "price": 1900,
     "description": "MySQL is a popular open-source relational database management system that is widely used for web application"
   },
@@ -68,6 +76,7 @@
     "image": "https://i.ibb.co/NWFX7dM/1660189176342.jpg",
     "title": "Problem-Solving Part",
     "enrolment": 2,
+    "rating": 3,
     "price": 2300,
     "description": "The Problem-Solving Part is a process of finding solutions to a particular problem or challenge"
   }

@@ -9,6 +9,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "./SocialLogin";
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
@@ -100,8 +101,9 @@ const Login = () => {
               />
             </div>
             <div className="form-control mt-6">
+              {/* TODO: apply disabled for re captcha */}
               <input
-                disabled={disabled}
+                disabled={false}
                 className="btn btn-primary"
                 type="submit"
                 value="Login"
@@ -115,10 +117,7 @@ const Login = () => {
             </p>
             <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
           </div>
-          <div className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer">
-            <FcGoogle size={32} />
-            <p>Continue with Google</p>
-          </div>
+          <SocialLogin></SocialLogin>
           <p className="px-6 text-sm flex gap-2 justify-center text-center mb-5 text-gray-400">
             Don&apos;t have an account yet?
             <Link
