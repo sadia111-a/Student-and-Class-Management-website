@@ -8,6 +8,8 @@ import SignUp from "../Pages/SignUp/SignUp";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import SingleCourse from "../Pages/AllClass/SingleCourse/SingleCourse";
 import PrivateRoute from "../Provider/PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
+import Enroll from "../Pages/Dashboard/Enroll/Enroll";
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +45,16 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch(`http://localhost:5000/course`),
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: "enroll",
+        element: <Enroll></Enroll>,
       },
     ],
   },

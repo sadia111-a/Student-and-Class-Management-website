@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "./AuthProvider";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
-  console.log(loading);
+  const location = useLocation();
+
   if (loading)
     return (
       <div className="flex flex-col justify-center items-center min-h-screen">
@@ -18,7 +19,7 @@ const PrivateRoute = ({ children }) => {
       </div>
     );
   if (!user?.email) {
-    return <Navigate to="/login"></Navigate>;
+    return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
   }
 
   return children;

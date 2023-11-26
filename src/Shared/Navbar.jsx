@@ -1,15 +1,13 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { FaBookOpen } from "react-icons/fa";
+import useEnroll from "../hooks/useEnroll";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [enroll] = useEnroll();
 
-  // const handleLogOut = () => {
-  //   logOut()
-  //     .then(() => {})
-  //     .catch((error) => console.log(error));
-  // };
   const navOptions = (
     <>
       <li className="font-serif font-bold">
@@ -83,9 +81,14 @@ const Navbar = () => {
                   </button>
                 </li>
                 <li>
-                  <button className="btn btn-sm  btn-ghost" onClick={logOut}>
-                    DashBoard
-                  </button>
+                  <NavLink to="/dashboard/enroll">
+                    <button className="btn btn-sm  btn-ghost">
+                      DashBoard <FaBookOpen />
+                      <div className="badge badge-secondary">
+                        +{enroll.length}
+                      </div>
+                    </button>
+                  </NavLink>
                 </li>
                 <li>
                   <button className="btn btn-sm  btn-ghost" onClick={logOut}>
