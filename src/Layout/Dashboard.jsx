@@ -4,10 +4,11 @@ import { FaUsersGear } from "react-icons/fa6";
 
 import { CgProfile } from "react-icons/cg";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
   // TODO: get isAdmin value from the database
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
   return (
     <div className="flex max-w-7xl mx-auto">
       {/* dashboard side bar */}
