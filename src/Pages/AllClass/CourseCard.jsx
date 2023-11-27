@@ -24,6 +24,7 @@ const CourseCard = ({ course }) => {
         title,
         image,
         price,
+        description,
       };
       axiosSecure.post("/enroll", courseItem).then((res) => {
         console.log(res.data);

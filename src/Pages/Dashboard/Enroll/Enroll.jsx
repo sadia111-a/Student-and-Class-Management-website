@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useEnroll from "../../../hooks/useEnroll";
 
 const Enroll = () => {
@@ -10,7 +11,7 @@ const Enroll = () => {
           My total enrolment classes:{enroll.length}
         </h2>
         <h2 className="text-xl font-semibold">
-          total enrolment classes price:{totalPrice}
+          total enrolment classes price:${totalPrice}
         </h2>
         <button className="font-semibold">Pay</button>
       </div>
@@ -29,9 +30,11 @@ const Enroll = () => {
               <p>Name:{item.email}</p>
               <p>Price:${item.price}</p>
               <div className="card-actions justify-center">
-                <button className="btn w-full border-0 text-black bg-yellow-100 hover:bg-yellow-200 btn-primary">
-                  Continue
-                </button>
+                <Link to={`enrollClass/${item._id}`}>
+                  <button className="btn w-full border-0 text-black bg-yellow-100 hover:bg-yellow-200 btn-primary">
+                    Continue
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

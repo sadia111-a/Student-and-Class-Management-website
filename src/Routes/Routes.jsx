@@ -10,6 +10,10 @@ import SingleCourse from "../Pages/AllClass/SingleCourse/SingleCourse";
 import PrivateRoute from "../Provider/PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
 import Enroll from "../Pages/Dashboard/Enroll/Enroll";
+import EnrollDetails from "../Pages/Dashboard/EnrollDetails";
+import Profile from "../Pages/Dashboard/Profile/Profile";
+import Allusers from "../Pages/Dashboard/AllUsers/Allusers";
+import TeacherReq from "../Pages/Dashboard/TeacherReq/TeacherReq";
 
 export const router = createBrowserRouter([
   {
@@ -55,6 +59,24 @@ export const router = createBrowserRouter([
       {
         path: "enroll",
         element: <Enroll></Enroll>,
+      },
+      // admin routes
+      {
+        path: "teacherReq",
+        element: <TeacherReq></TeacherReq>,
+      },
+      {
+        path: "users",
+        element: <Allusers></Allusers>,
+      },
+      {
+        path: "profile",
+        element: <Profile></Profile>,
+      },
+      {
+        path: "enroll/enrollClass/:_id",
+        element: <EnrollDetails></EnrollDetails>,
+        loader: () => fetch(`http://localhost:5000/enroll`),
       },
     ],
   },

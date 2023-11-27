@@ -3,12 +3,31 @@ import { useForm } from "react-hook-form";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Teach = () => {
   const { user } = useContext(AuthContext);
   const { register, handleSubmit, reset } = useForm();
+  const axiosPublic = useAxiosPublic();
+  // const navigate = useNavigate();
+
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+    axiosPublic.post("/teachers", data).then((res) => {
+      if (res.data.insertedId) {
+        console.log("user added to the database");
+        reset();
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Requested successfully ",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        // navigate("/");
+      }
+    });
   };
   return (
     <div>

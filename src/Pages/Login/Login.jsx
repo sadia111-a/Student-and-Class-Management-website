@@ -13,7 +13,7 @@ import SocialLogin from "./SocialLogin";
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
-  const { signIn } = useContext(AuthContext);
+  const { user, signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 

@@ -3,13 +3,25 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const SocialLogin = () => {
   const navigate = useNavigate();
-  const { user, googleLogin } = useContext(AuthContext);
-  const handleSocialLogin = (media) => {
-    media()
-      .then((res) => {
+  const { googleLogin } = useContext(AuthContext);
+  const axiosPublic = useAxiosPublic();
+
+  const handleSocialLogin = () => {
+    googleLogin()
+      .then((result) => {
+        console.log(result.user);
+        const userInfo = {
+          name: result.user?.displayName,
+          email: result.user?.email,
+          image: result.user?.photoUrl,
+        };
+        axiosPublic.post("/users", userInfo).then((res) => {
+          console.log(res.data);
+        });
         Swal.fire({
           title: "Good job!",
           text: "You logged in successfully!",
