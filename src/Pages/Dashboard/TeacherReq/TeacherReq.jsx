@@ -1,4 +1,5 @@
-import { FaTrashAlt } from "react-icons/fa";
+import { FcApprove } from "react-icons/fc";
+import { FcDisapprove } from "react-icons/fc";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 
@@ -62,10 +63,18 @@ const TeacherReq = () => {
                 <td>pending</td>
                 <td>
                   <button
-                    // onClick={() => handleDeleteUser(user)}
-                    className="btn btn-ghost btn-lg"
+                    // onClick={() => handleMakeAdmin(user)}
+                    className="btn btn-sm bg-yellow-100"
                   >
-                    <FaTrashAlt className="text-red-600"></FaTrashAlt>
+                    Approved
+                    <FcApprove className="text-green" />
+                  </button>
+                  <button
+                    // onClick={() => handleDeleteUser(user)}
+                    className="btn btn-sm bg-yellow-100"
+                  >
+                    Rejected
+                    <FcDisapprove className="text-base" />
                   </button>
                 </td>
               </tr>
