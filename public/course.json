@@ -10,11 +10,11 @@
   },
   {
     "id": 2,
-    "image": "https://i.ibb.co/bXKyG7r/Introduction-To-Algorithm.jpg",
+    "image": "https://i.ibb.co/6Dy5Y0k/What-is-an-Algorithm-and-its-Different-Types-of-Algorithms.jpg",
     "title": "Introduction to Algorithms",
     "enrolment": 2,
     "rating": 2,
-    "price": 2500,
+    "price": 250,
     "description": "An algorithm is a set of instructions designed to solve a problem or perform a specific task."
   },
   {
