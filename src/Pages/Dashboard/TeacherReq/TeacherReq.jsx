@@ -2,16 +2,32 @@ import { FcApprove } from "react-icons/fc";
 import { FcDisapprove } from "react-icons/fc";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
 const TeacherReq = () => {
   const axiosSecure = useAxiosSecure();
-  const { data: teachers = [] } = useQuery({
+  const { data: teachers = [], refetch } = useQuery({
     queryKey: ["teachers"],
     queryFn: async () => {
       const res = await axiosSecure.get("/teachers");
       return res.data;
     },
   });
+  const handleMakeTeacher = (teacher) => {
+    axiosSecure.patch(`/teachers/admin/${teacher._id}`).then((res) => {
+      console.log(res.data);
+      if (res.data.modifiedCount > 0) {
+        refetch();
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: `${teacher.name} is an Teacher Now`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    });
+  };
   return (
     <div>
       <div className="flex justify-evenly my-4">
@@ -50,32 +66,20 @@ const TeacherReq = () => {
                   </div>
                 </td>
                 <td>{teacher.experience}</td>
-                <td>
-                  {teacher.title}
-                  {/* { user.role === 'admin' ? 'Admin' : <button
-                                onClick={() => handleMakeAdmin(user)}
-                                className="btn btn-lg bg-orange-500">
-                                <FaUsers className="text-white 
-                                text-2xl"></FaUsers>
-                            </button>} */}
-                </td>
+                <td>{teacher.title}</td>
                 <td>{teacher.category}</td>
                 <td>pending</td>
                 <td>
-                  <button
-                    // onClick={() => handleMakeAdmin(user)}
-                    className="btn btn-sm bg-yellow-100"
-                  >
-                    Approved
-                    <FcApprove className="text-green" />
-                  </button>
-                  <button
-                    // onClick={() => handleDeleteUser(user)}
-                    className="btn btn-sm bg-yellow-100"
-                  >
-                    Rejected
-                    <FcDisapprove className="text-base" />
-                  </button>
+                  {teacher.role === "teacher" ? (
+                    "Teacher"
+                  ) : (
+                    <button
+                      onClick={() => handleMakeTeacher(teacher)}
+                      className="btn btn-ghost btn-xs"
+                    >
+                      Approved Teacher
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}

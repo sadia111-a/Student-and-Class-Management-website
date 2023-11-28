@@ -1,7 +1,49 @@
 const Profile = () => {
   return (
     <div>
-      <h2>this is my profile</h2>
+      <div className="overflow-x-auto">
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>role</th>
+              <th>image</th>
+              <th>email</th>
+              <th>phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* row 1 */}
+            <tr>
+              <td>
+                Zemlak, Daniel and Leannon
+                <br />
+                <span className="badge badge-ghost badge-sm">
+                  Desktop Support Technician
+                </span>
+              </td>
+              <td>Role:</td>
+              <td>
+                <div className="flex items-center gap-3">
+                  <div className="avatar">
+                    <div className="mask mask-squircle w-12 h-12">
+                      <img
+                        src="/tailwind-css-component-profile-2@56w.png"
+                        alt="Avatar Tailwind CSS Component"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+              <th>
+                <button className="btn btn-ghost btn-xs">details</button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

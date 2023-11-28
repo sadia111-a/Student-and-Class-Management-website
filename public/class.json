@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/zZ3qTbB/Rectangle-2-2.png",
+    "title": "Introduction to C Programming",
+    "enrolment": 1,
+    "rating": 3,
+    "price": 150,
+    "description": "Learn the fundamentals of C programming, including variables, loops, and functions."
+  },
+  {
+    "id": 2,
+    "title": "https://i.ibb.co/XpYNhMH/Rectangle-2-3.png",
+    "course_name": "Introduction to Algorithms",
+    "enrolment": 2,
+    "rating": 4,
+    "price": 250,
+    "description": "An algorithm is a set of instructions designed to solve a problem or perform a specific task."
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/N7tJZWQ/Rectangle-2-4.png",
+    "title": "Introduction to C++ for DSA",
+    "enrolment": 10,
+    "price": 100,
+    "rating": 2,
+    "description": "C++ is a powerful programming language that is commonly used in the field of Data Structures and Algorithms (DSA).."
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/qsmRSR6/Rectangle-3.png",
+    "title": "Basic Data Structures",
+    "enrolment": 5,
+    "rating": 2,
+    "price": 350,
+    "description": "Basic data structures are fundamental building blocks in computer science and programming."
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co/tB77bGg/Rectangle-2.png",
+    "title": "Introduction to OOP Python",
+    "enrolment": 5,
+    "price": 190,
+    "rating": 3,
+    "description": "In Python, object-oriented Programming (OOPs) is a programming paradigm that uses objects and classes in programming. "
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co/C6dcRrx/Rectangle-2-5.png",
+    "title": "Software Engineering",
+    "enrolment": 2,
+    "rating": 4,
+    "price": 230,
+    "description": "Software engineering is the systematic approach to the development, operation, and maintenance of software systems"
+  },
+  {
+    "id": 7,
+    "image": "https://i.ibb.co/HT85B3L/Rectangle-3-1.png",
+    "title": "AWS, Cloud Computing",
+    "enrolment": 5,
+    "price": 350,
+    "rating": 4,
+    "description": "Amazon Web Services (AWS) is a leading cloud computing platform offered by Amazon a wide range of on-demand computing resources and services over the internet."
+  },
+  {
+    "id": 8,
+    "image": "https://i.ibb.co/dLLVtcW/Rectangle-2-1.png",
+    "title": "Database (MySQL)",
+    "enrolment": 5,
+    "price": 190,
+    "rating": 4,
+    "description": "MySQL is a popular open-source relational database management system that is widely used for web application"
+  },
+  {
+    "id": 9,
+    "image": "https://i.ibb.co/BZ17ZWm/Rectangle-2-6.png",
+    "title": "Problem-Solving Part",
+    "enrolment": 2,
+    "rating": 4,
+    "price": 230,
+    "description": "The Problem-Solving Part is a process of finding solutions to a particular problem or challenge"
+  }
+]

@@ -14,6 +14,11 @@ import EnrollDetails from "../Pages/Dashboard/EnrollDetails";
 import Profile from "../Pages/Dashboard/Profile/Profile";
 import Allusers from "../Pages/Dashboard/AllUsers/Allusers";
 import TeacherReq from "../Pages/Dashboard/TeacherReq/TeacherReq";
+import AddItems from "../Pages/Dashboard/AddItems/AddItems";
+import AdminRoute from "../Provider/AdminRoute";
+import TeacherClass from "../Pages/Home/TeacherClass";
+import MyClass from "../Pages/Dashboard/TeacherClass/MyClass";
+import AllClass from "../Pages/Dashboard/AllClass/AllClass";
 
 export const router = createBrowserRouter([
   {
@@ -56,14 +61,32 @@ export const router = createBrowserRouter([
     path: "dashboard",
     element: <Dashboard></Dashboard>,
     children: [
+      // normal user route
       {
         path: "enroll",
         element: <Enroll></Enroll>,
       },
       // admin routes
       {
+        path: "addClass",
+        element: <AddItems></AddItems>,
+      },
+      {
+        path: "allClass",
+        element: <AllClass></AllClass>,
+      },
+      {
         path: "teacherReq",
-        element: <TeacherReq></TeacherReq>,
+        element: (
+          <AdminRoute>
+            <TeacherReq></TeacherReq>
+          </AdminRoute>
+        ),
+      },
+      // teachers route
+      {
+        path: "myClass",
+        element: <MyClass></MyClass>,
       },
       {
         path: "users",

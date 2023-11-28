@@ -3,17 +3,17 @@ import useAuth from "./useAuth";
 import useAxiosSecure from "./useAxiosSecure";
 
 const useTeacher = () => {
-  // tan stack query
-  const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
-  const { refetch, data: teachers = [] } = useQuery({
-    queryKey: ["enroll", user?.email],
+  const axiosSecure = useAxiosSecure();
+  const { data: isTeacher, isPending: isTeacherLoading } = useQuery({
+    queryKey: [user?.email, "isTeacher"],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/teachers?email=${user.email}`);
-      return res.data;
+      const res = await axiosSecure.get(`/teachers/admin/${user.email}`);
+      //   console.log(res.data);
+      return res.data?.teacher;
     },
   });
-  return [teachers, refetch];
+  return [isTeacher, isTeacherLoading];
 };
 
 export default useTeacher;

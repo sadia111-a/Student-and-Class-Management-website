@@ -41,18 +41,34 @@ const Teach = () => {
         ></SectionTitle>
         <div>
           <form className="w-3/4 mx-auto" onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-control  my-6">
-              <label className="label">
-                <span className="label-text">Name*</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Name"
-                {...register("name", { required: true })}
-                required
-                className="input input-bordered w-full"
-              />
+            <div className="flex gap-6">
+              <div className="form-control w-full  my-6">
+                <label className="label">
+                  <span className="label-text">Name*</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  {...register("name", { required: true })}
+                  required
+                  className="input input-bordered w-full"
+                />
+              </div>
+              {/* user email */}
+              <div className="form-control w-full my-6">
+                <label className="label">
+                  <span className="label-text">User Email*</span>
+                </label>
+                <input
+                  type="email"
+                  placeholder="email"
+                  defaultValue={user?.email}
+                  {...register("email", { required: true })}
+                  className="input input-bordered w-full"
+                />
+              </div>
             </div>
+
             <div className="flex gap-6">
               {/* experience */}
               <div className="form-control w-full my-6">
