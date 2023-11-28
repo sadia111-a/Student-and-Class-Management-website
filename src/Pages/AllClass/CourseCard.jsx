@@ -32,7 +32,7 @@ const CourseCard = ({ course }) => {
           Swal.fire({
             position: "top-center",
             icon: "success",
-            title: `${title} added to your cart`,
+            title: `${title} added to your enrolment`,
             showConfirmButton: false,
             timer: 1500,
           });

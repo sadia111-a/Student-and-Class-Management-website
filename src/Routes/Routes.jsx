@@ -19,6 +19,8 @@ import AdminRoute from "../Provider/AdminRoute";
 import TeacherClass from "../Pages/Home/TeacherClass";
 import MyClass from "../Pages/Dashboard/TeacherClass/MyClass";
 import AllClass from "../Pages/Dashboard/AllClass/AllClass";
+import UpdateClass from "../Pages/Dashboard/UpdateClass/UpdateClass";
+import Payment from "../Pages/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +47,10 @@ export const router = createBrowserRouter([
       {
         path: "signUp",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>,
       },
       {
         path: "singleCourse/:_id",
@@ -87,6 +93,12 @@ export const router = createBrowserRouter([
       {
         path: "myClass",
         element: <MyClass></MyClass>,
+      },
+      {
+        path: "updateClass/:id",
+        element: <UpdateClass></UpdateClass>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/classes/${params.id}`),
       },
       {
         path: "users",

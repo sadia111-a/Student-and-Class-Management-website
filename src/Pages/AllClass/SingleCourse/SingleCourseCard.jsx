@@ -1,5 +1,6 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { Link } from "react-router-dom";
 
 const SingleCourseCard = ({ course }) => {
   const { title, enrolment, price, image, description, _id, rating } =
@@ -51,9 +52,11 @@ const SingleCourseCard = ({ course }) => {
             </span>
 
             <div className="">
-              <button className="btn text-orange-950 font-semibold hover:bg-amber-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Payment
-              </button>
+              <Link to="/payment">
+                <button className="btn text-orange-950 font-semibold hover:bg-amber-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                  Payment
+                </button>
+              </Link>
             </div>
           </div>
         </div>

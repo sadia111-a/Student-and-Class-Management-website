@@ -18,7 +18,7 @@ const AllClass = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const res = await axiosSecure.delete(`/menu/${item._id}`);
+        const res = await axiosSecure.delete(`/course/${item._id}`);
         // console.log(res.data);
         if (res.data.deletedCount > 0) {
           // refetch to update the ui
@@ -26,7 +26,7 @@ const AllClass = () => {
           Swal.fire({
             position: "top-end",
             icon: "success",
-            title: `${item.name} has been deleted`,
+            title: `${item.title} has been deleted`,
             showConfirmButton: false,
             timer: 1500,
           });

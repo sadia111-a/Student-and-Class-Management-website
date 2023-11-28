@@ -47,7 +47,7 @@ const Dashboard = () => {
             </>
           ) : (
             <>
-              <li className="mb-3">
+              {/* <li className="mb-3">
                 <NavLink to="/dashboard/enroll">
                   <FaBook></FaBook>My enroll class
                 </NavLink>
@@ -57,7 +57,7 @@ const Dashboard = () => {
                   <CgProfile />
                   Profile
                 </NavLink>
-              </li>
+              </li> */}
             </>
           )}
           {/* teacher dashboard */}
@@ -74,6 +74,17 @@ const Dashboard = () => {
                 <NavLink to="/dashboard/addClass">
                   <SiGoogleclassroom />
                   Add Class
+                </NavLink>
+              </li>
+              <li className="mb-3">
+                <NavLink to="/dashboard/enroll">
+                  <FaBook></FaBook>My enroll class
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/profile">
+                  <CgProfile />
+                  Profile
                 </NavLink>
               </li>
             </>
