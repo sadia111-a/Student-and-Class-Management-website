@@ -6,6 +6,7 @@ import FeedBack from "./FeedBack";
 import OnlineBook from "./OnlineBook";
 import Star from "./Star";
 import TeacherClass from "./TeacherClass";
+import Stats from "./Stats";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Partners></Partners>
       <Courses></Courses>
       <TeacherClass></TeacherClass>
+      <Stats></Stats>
       <FeedBack></FeedBack>
       <OnlineBook></OnlineBook>
       <Star></Star>

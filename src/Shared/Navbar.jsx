@@ -3,10 +3,14 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaBookOpen } from "react-icons/fa";
 import useEnroll from "../hooks/useEnroll";
+import useAdmin from "../hooks/useAdmin";
+import useTeacher from "../hooks/useTeacher";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [enroll] = useEnroll();
+  const [isAdmin] = useAdmin();
+  const [isTeacher] = useTeacher();
 
   const navOptions = (
     <>
@@ -80,7 +84,44 @@ const Navbar = () => {
                     {user.displayName}
                   </button>
                 </li>
-                <li>
+                {user && isAdmin && (
+                  <li>
+                    <NavLink to="/dashboard/adminHome">
+                      <button className="btn btn-sm  btn-ghost">
+                        DashBoard <FaBookOpen />
+                        <div className="badge badge-secondary">
+                          +{enroll.length}
+                        </div>
+                      </button>
+                    </NavLink>
+                  </li>
+                )}
+                {user && isTeacher && (
+                  <li>
+                    <NavLink to="/dashboard/teacherHome">
+                      <button className="btn btn-sm  btn-ghost">
+                        DashBoard <FaBookOpen />
+                        <div className="badge badge-secondary">
+                          +{enroll.length}
+                        </div>
+                      </button>
+                    </NavLink>
+                  </li>
+                )}
+                {user && !isAdmin && !isTeacher && (
+                  <li>
+                    <NavLink to="/dashboard/userHome">
+                      <button className="btn btn-sm  btn-ghost">
+                        DashBoard <FaBookOpen />
+                        <div className="badge badge-secondary">
+                          +{enroll.length}
+                        </div>
+                      </button>
+                    </NavLink>
+                  </li>
+                )}
+
+                {/* <li>
                   <NavLink to="/dashboard/enroll">
                     <button className="btn btn-sm  btn-ghost">
                       DashBoard <FaBookOpen />
@@ -89,7 +130,7 @@ const Navbar = () => {
                       </div>
                     </button>
                   </NavLink>
-                </li>
+                </li> */}
                 <li>
                   <button className="btn btn-sm  btn-ghost" onClick={logOut}>
                     Logout

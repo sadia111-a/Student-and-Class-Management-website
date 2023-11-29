@@ -6,7 +6,6 @@ const Profile = () => {
   const { user } = useAuth();
   const [role] = useRole();
   if (!user) {
-    // You can render a loading spinner or redirect the user to login
     return (
       <div className="flex flex-col justify-center items-center min-h-screen">
         Loading...

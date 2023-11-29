@@ -2,6 +2,7 @@ import { FaBook, FaHome } from "react-icons/fa";
 import { SiGoogleclassroom } from "react-icons/si";
 import { GiTeacher } from "react-icons/gi";
 import { FaUsersGear } from "react-icons/fa6";
+import { MdPayment } from "react-icons/md";
 
 import { CgProfile } from "react-icons/cg";
 import { NavLink, Outlet } from "react-router-dom";
@@ -20,6 +21,12 @@ const Dashboard = () => {
           {/* admin dashboard */}
           {isAdmin ? (
             <>
+              <li className="mb-3">
+                <NavLink to="/dashboard/adminHome">
+                  <FaHome></FaHome>
+                  Admin Home
+                </NavLink>
+              </li>
               <li className="mb-3">
                 <NavLink to="/dashboard/teacherReq">
                   <GiTeacher />
@@ -64,6 +71,12 @@ const Dashboard = () => {
           {isTeacher ? (
             <>
               <li className="mb-3">
+                <NavLink to="/dashboard/teacherHome">
+                  <FaHome></FaHome>
+                  Teacher Home
+                </NavLink>
+              </li>
+              <li className="mb-3">
                 <NavLink to="/dashboard/myClass">
                   <GiTeacher />
                   My class
@@ -91,6 +104,11 @@ const Dashboard = () => {
           ) : (
             <>
               <li className="mb-3">
+                <NavLink to="/dashboard/userHome">
+                  <FaHome></FaHome> Student Home
+                </NavLink>
+              </li>
+              <li className="mb-3">
                 <NavLink to="/dashboard/enroll">
                   <FaBook></FaBook>My enroll class
                 </NavLink>
@@ -99,6 +117,12 @@ const Dashboard = () => {
                 <NavLink to="/dashboard/profile">
                   <CgProfile />
                   Profile
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/paymentHistory">
+                  <MdPayment />
+                  Payment History
                 </NavLink>
               </li>
             </>

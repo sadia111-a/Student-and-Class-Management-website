@@ -16,11 +16,15 @@ import Allusers from "../Pages/Dashboard/AllUsers/Allusers";
 import TeacherReq from "../Pages/Dashboard/TeacherReq/TeacherReq";
 import AddItems from "../Pages/Dashboard/AddItems/AddItems";
 import AdminRoute from "../Provider/AdminRoute";
-import TeacherClass from "../Pages/Home/TeacherClass";
+
 import MyClass from "../Pages/Dashboard/TeacherClass/MyClass";
 import AllClass from "../Pages/Dashboard/AllClass/AllClass";
 import UpdateClass from "../Pages/Dashboard/UpdateClass/UpdateClass";
 import Payment from "../Pages/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import TeacherHome from "../Pages/Dashboard/TeacherHome/TeacherHome";
 
 export const router = createBrowserRouter([
   {
@@ -69,10 +73,26 @@ export const router = createBrowserRouter([
     children: [
       // normal user route
       {
+        path: "userHome",
+        element: <UserHome></UserHome>,
+      },
+      {
         path: "enroll",
         element: <Enroll></Enroll>,
       },
+      {
+        path: "paymentHistory",
+        element: <PaymentHistory></PaymentHistory>,
+      },
       // admin routes
+      {
+        path: "adminHome",
+        element: (
+          <AdminRoute>
+            <AdminHome></AdminHome>
+          </AdminRoute>
+        ),
+      },
       {
         path: "addClass",
         element: <AddItems></AddItems>,
@@ -93,6 +113,10 @@ export const router = createBrowserRouter([
       {
         path: "myClass",
         element: <MyClass></MyClass>,
+      },
+      {
+        path: "teacherHome",
+        element: <TeacherHome></TeacherHome>,
       },
       {
         path: "updateClass/:id",

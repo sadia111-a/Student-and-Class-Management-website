@@ -1,10 +1,61 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import useEnroll from "../../../hooks/useEnroll";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useAuth from "../../../hooks/useAuth";
 
 const SingleCourseCard = ({ course }) => {
   const { title, enrolment, price, image, description, _id, rating } =
     course || {};
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const axiosSecure = useAxiosSecure();
+  const [, refetch] = useEnroll();
+  const handleAddToCourse = () => {
+    if (user && user.email) {
+      //send course to the database
+      const courseItem = {
+        courseId: _id,
+        email: user.email,
+        title,
+        image,
+        price,
+        description,
+      };
+      axiosSecure.post("/enroll", courseItem).then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: `${title} added to your enrolment`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          // refetch to update enrolment
+          refetch();
+        }
+      });
+    } else {
+      Swal.fire({
+        title: "You are not Logged In",
+        text: "Please login to add to the enroll",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, login!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          //   send the user to the login page
+          navigate("/login", { state: { from: location } });
+        }
+      });
+    }
+  };
   return (
     <div className="mb-4">
       <div className="lg:w-1/2 mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -53,7 +104,10 @@ const SingleCourseCard = ({ course }) => {
 
             <div className="">
               <Link to="/payment">
-                <button className="btn text-orange-950 font-semibold hover:bg-amber-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <button
+                  onClick={handleAddToCourse}
+                  className="btn text-orange-950 font-semibold hover:bg-amber-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
                   Payment
                 </button>
               </Link>

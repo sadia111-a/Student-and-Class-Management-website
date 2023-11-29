@@ -71,7 +71,7 @@ const TeacherReq = () => {
                 <td>pending</td>
                 <td>
                   {teacher.role === "teacher" ? (
-                    "Teacher"
+                    "Accepted Teacher"
                   ) : (
                     <button
                       onClick={() => handleMakeTeacher(teacher)}
