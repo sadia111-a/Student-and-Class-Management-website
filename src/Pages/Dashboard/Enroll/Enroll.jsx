@@ -13,7 +13,13 @@ const Enroll = () => {
         <h2 className="text-xl font-semibold">
           total enrolment classes price:${totalPrice}
         </h2>
-        <button className="font-semibold">Pay</button>
+        <div className="text-center">
+          <Link to="/payment">
+            <button className="font-semibold bg-yellow-200 hover:bg-slate-300 px-11 py-2 rounded-md">
+              Pay
+            </button>
+          </Link>
+        </div>
       </div>
       {/* enroll class card */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-14">

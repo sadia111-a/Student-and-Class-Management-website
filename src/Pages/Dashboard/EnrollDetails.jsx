@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import useEnroll from "../../hooks/useEnroll";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import EnrollDetailsPage from "./EnrollDetailsPage";
 
 const EnrollDetails = () => {
   const [enroll] = useEnroll();
@@ -12,9 +13,9 @@ const EnrollDetails = () => {
   const allCourse = useLoaderData();
   console.log(allCourse);
   useEffect(() => {
-    const findCourse = allCourse?.find((course) => course._id == _id);
+    const findCourse = enroll?.find((course) => course._id == _id);
     setCourse(findCourse);
-  }, [_id, allCourse]);
+  }, [_id, enroll]);
 
   return (
     <div>
@@ -22,33 +23,7 @@ const EnrollDetails = () => {
         heading={"Assignments"}
         subHeading={"online exam"}
       ></SectionTitle>
-      <div className="overflow-x-auto">
-        <table className="table  w-full">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Title</th>
-              <th>Deadline</th>
-              <th>Description</th>
-              <th>Submit</th>
-            </tr>
-          </thead>
-          <tbody>
-            {enroll.map((item, index) => (
-              <tr key={item._id}>
-                <th>{index + 1}</th>
-                <td>{item.title}</td>
-                <td>12-12-23</td>
-                <td className="w-96">{item.description}</td>
-                <td>
-                  <button className="btn btn-ghost">Submit</button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <EnrollDetailsPage course={course}></EnrollDetailsPage>
     </div>
   );
 };
