@@ -100,6 +100,12 @@ const Dashboard = () => {
                   Profile
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/dashboard/paymentHistory">
+                  <MdPayment />
+                  Payment History
+                </NavLink>
+              </li>
             </>
           ) : (
             <>

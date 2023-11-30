@@ -88,7 +88,7 @@ const MyClass = () => {
                   Delete
                 </button>
 
-                <Link to={`enrollClass/${item._id}`}>
+                <Link to="">
                   <button className="btn w-full border-0 text-black bg-yellow-100 hover:bg-yellow-200 btn-primary">
                     See Details
                   </button>

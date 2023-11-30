@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useCourse from "../../../hooks/useCourse";
@@ -6,6 +5,45 @@ import useCourse from "../../../hooks/useCourse";
 const AllClass = () => {
   const [course, , refetch] = useCourse();
   const axiosSecure = useAxiosSecure();
+
+  const handleApproveItem = async (item) => {
+    try {
+      const url = `/course/approve/${item._id}`;
+      console.log("Request URL:", url);
+      const res = await axiosSecure.patch(url);
+
+      if (res.data.course) {
+        // Update the course in your local state or refetch
+        // assuming you have a state or refetch function
+        // example: refetch();
+
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: `${item.title} has been approved`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      } else {
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Failed to approve course",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Failed to approve course",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  };
 
   const handleDeleteItem = (item) => {
     Swal.fire({
@@ -75,11 +113,12 @@ const AllClass = () => {
                   <td>{item.rating}</td>
                   <td>${item.price}</td>
                   <td>
-                    <Link to={`/dashboard/updateItem/${item._id}`}>
-                      <button className="btn btn-ghost btn-sm bg-yellow-100">
-                        Approved
-                      </button>
-                    </Link>
+                    <button
+                      onClick={() => handleApproveItem(item)}
+                      className="btn btn-ghost btn-sm bg-yellow-100"
+                    >
+                      Approved
+                    </button>
                   </td>
                   <td>
                     <button
@@ -90,12 +129,7 @@ const AllClass = () => {
                     </button>
                   </td>
                   <td>
-                    <button
-                      // onClick={() => handleDeleteItem(item)}
-                      className="btn btn-ghost btn-sm"
-                    >
-                      Progress
-                    </button>
+                    <button className="btn btn-ghost btn-sm">Progress</button>
                   </td>
                 </tr>
               ))}

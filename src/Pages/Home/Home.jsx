@@ -9,6 +9,14 @@ import TeacherClass from "./TeacherClass";
 import Stats from "./Stats";
 
 const Home = () => {
+  // const { user } = useAuth();
+  // if (!user) {
+  //   return (
+  //     <div className="flex flex-col justify-center items-center min-h-screen">
+  //       Loading...
+  //     </div>
+  //   );
+  // }
   return (
     <div>
       <Helmet>
