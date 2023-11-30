@@ -39,7 +39,8 @@ export const router = createBrowserRouter([
       {
         path: "allClass",
         element: <AllClasses></AllClasses>,
-        loader: () => fetch("http://localhost:5000/courseCount"),
+        loader: () =>
+          fetch("https://student-learn-server.vercel.app/courseCount"),
       },
       {
         path: "teach",
@@ -64,7 +65,7 @@ export const router = createBrowserRouter([
             <SingleCourse></SingleCourse>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:5000/course`),
+        loader: () => fetch(`https://student-learn-server.vercel.app/course`),
       },
     ],
   },
@@ -123,7 +124,7 @@ export const router = createBrowserRouter([
         path: "updateClass/:id",
         element: <UpdateClass></UpdateClass>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/classes/${params.id}`),
+          fetch(`https://student-learn-server.vercel.app/classes/${params.id}`),
       },
       {
         path: "users",
@@ -136,7 +137,7 @@ export const router = createBrowserRouter([
       {
         path: "enroll/enrollClass/:_id",
         element: <EnrollDetails></EnrollDetails>,
-        loader: () => fetch(`http://localhost:5000/enroll`),
+        loader: () => fetch(`https://student-learn-server.vercel.app/enroll`),
       },
     ],
   },

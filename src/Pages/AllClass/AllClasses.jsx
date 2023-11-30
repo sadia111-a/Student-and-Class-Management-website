@@ -15,7 +15,7 @@ const AllClasses = () => {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     fetch(
-      `http://localhost:5000/course?page=${currentPage}&size=${itemsPerPage}`
+      `https://student-learn-server.vercel.app/course?page=${currentPage}&size=${itemsPerPage}`
     )
       .then((res) => res.json())
       .then((data) => setCourses(data));
