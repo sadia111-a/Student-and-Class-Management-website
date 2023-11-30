@@ -3,10 +3,67 @@
 - https://food-sharing-b0af8.web.app/
 - https://ugliest-war.surge.sh/
 
-## Five key points about my website:
+## key points about my website:
 
-- User Authentication: My project includes user authentication, allowing users to register and log in to their accounts. This feature provides a secure and personalized experience for users.
-- Food Addition: Users can add new food to the system. They can input the food name, food image,food quantity, pickup location, expired date and quality of the new food. This data is sent to the server via a POST request.
-- Food Display: In my project displays a list of foods associated with a specific food. Users can view foods from a particular email, and the foods are presented in a grid layout. This provides a way to showcase a food's catalog.
-- Food Request: My project includes a food request feature. Users can add foods to their my food request, and the request contents are displayed in a tabular form. Users can interact with the request, such as removing requests.
-- Food Details View: Users can access detailed information about a specific food. When users click on a food's view details button, they are redirected to a food details page. Here, they can see more information about the food, including its name, pickup location, expired date, food quantity, donator image,donator name and food image.
+- Authentication:I have implemented user authentication using Firebase (useAuth hook).Different components, such as Profile, UserHome, TeacherHome, and others, show personalized content based on the user's role.
+
+- Role-based Access:
+
+  1.In my website a role-based access control system (useRole hook), where users can have roles like "user","teacher" and "admin."
+  2.Certain actions, like making a user an admin or approving courses, restricted based on the user's role.
+
+- Course Management:
+
+  1.The application handles the management of courses, including features like approving courses (handleApproveItem), deleting courses (handleDeleteItem), and displaying a list of all classes (AllClass component).
+
+- Enrollment:
+
+Users can enroll in classes, and there's a section (Enroll component) that displays the enrolled classes, their total price, and provides an option to pay
+
+- Pagination:
+
+There is a pagination feature implemented in the AllClasses component, allowing users to navigate through different pages of courses.
+
+User Management:
+
+- There's a section (Allusers component) that displays a list of users, and admins can make users admin.
+
+- Class Management:
+
+Teachers can manage their added classes in the MyClass component, with options to update and delete classes.
+
+- Alerts/Notifications:
+
+I'm using the sweetalert2 library for displaying alert messages or notifications to users in response to various actions.
+
+- Routing:
+
+React Router (react-router-dom) is used for client-side routing, allowing navigation between different pages/components.
+
+- State Management:
+
+React hooks like useState and useEffect are used for state management in functional components..
+
+- Querying Data:
+
+Data fetching is done using Axios (useAxiosSecure hook), and the react-query library is used for fetching data on the client side.
+
+- Helmet Component:
+
+The react-helmet-async library is used to dynamically set the document title based on the current page.
+
+- UI Framework:
+
+Tailwind CSS is used for styling the components, providing a clean and responsive user interface.
+
+- Conditional Rendering:
+
+Components conditionally render content based on certain conditions, such as the user's role or the status of a course.
+
+- Component Composition:
+
+The project is organized into multiple components, promoting reusability and maintainability.
+
+- Error Handling:
+
+There is some basic error handling, such as displaying error messages in case of failed requests.
